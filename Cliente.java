@@ -1,10 +1,9 @@
-package org.example;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-public class Client {
+public class Cliente {
 
-    private Client() {}
+    private Cliente() {}
 
     public static void main(String[] args){
 
