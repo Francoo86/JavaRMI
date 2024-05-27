@@ -4,8 +4,11 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class Servidor implements Hola{
+    private Registry reg = null;
 
-    public Servidor() {}
+    public Servidor() throws RemoteException {
+        reg = LocateRegistry.createRegistry(1099);
+    }
 
     public String diHola(){
         return "Hola, mundo";

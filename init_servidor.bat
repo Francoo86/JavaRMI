@@ -1,0 +1,1 @@
+start java -classpath clases -Djava.rmi.server.codebase=file:clases/ Servidor
