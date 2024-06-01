@@ -3,7 +3,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Servidor implements Hola{
+public class Servidor implements Hola {
     private Registry reg = null;
 
     public Servidor() throws RemoteException {
@@ -15,7 +15,6 @@ public class Servidor implements Hola{
     }
 
     public static void main(String args[]){
-
         try {
             Servidor obj = new Servidor();
             Hola stub = (Hola) UnicastRemoteObject.exportObject(obj, 0);
