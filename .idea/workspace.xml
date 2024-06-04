@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b35d13d-96c8-48ca-9dbe-9bb4f7c7d5bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AplicacionRMI/TestVehicles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/java-dotenv-5.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-j-8.3.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dotenv-java-3.0.0-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AplicacionRMI/TestVehicles.java" beforeDir="false" afterPath="$PROJECT_DIR$/AplicacionRMI/TestVehicles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AplicacionRMI/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/AplicacionRMI/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.TestVehicles.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",

@@ -1,22 +1,27 @@
 package AplicacionRMI;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "vehicles")
 public class Vehicle {
+    @DatabaseField(unique = true)
     private String plate;
+    @DatabaseField
     private String brand;
+    @DatabaseField
     private String model;
+    @DatabaseField
     private String color;
+    @DatabaseField
     private String year;
+    @DatabaseField
     private String owner;
+    @DatabaseField
     private String rut;
 
-    public Vehicle(String plate, String brand, String model, String color, String year, String owner, String rut) {
-        this.plate = plate;
-        this.brand = brand;
-        this.model = model;
-        this.color = color;
-        this.year = year;
-        this.owner = owner;
-        this.rut = rut;
+    public Vehicle() {
+
     }
 
     public String getPlate() {
