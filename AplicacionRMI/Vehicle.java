@@ -12,17 +12,11 @@ public class Vehicle {
     @DatabaseField
     private String model;
     @DatabaseField
-    private String color;
-    @DatabaseField
     private String year;
-    @DatabaseField
-    private String owner;
-    @DatabaseField
-    private String rut;
     // add person object field
-    @DatabaseField
+    @DatabaseField (defaultValue = "null", foreign = true, foreignAutoRefresh = true)
     private Person person;
-    @DatabaseField
+    @DatabaseField (defaultValue = "false")
     private boolean wasStolen;
 
     public Vehicle() {
@@ -53,36 +47,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String getYear() {
         return year;
     }
 
     public void setYear(String year) {
         this.year = year;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public String getRut() {
-        return rut;
-    }
-
-    public void setRut(String rut) {
-        this.rut = rut;
     }
 
     // add getter and setter for person object
