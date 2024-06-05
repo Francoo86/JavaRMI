@@ -11,7 +11,6 @@ public class Person {
     private String name;
     @DatabaseField
     private String lastName;
-    @DatabaseField
 
     public Person() {
 
@@ -40,4 +39,5 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 }

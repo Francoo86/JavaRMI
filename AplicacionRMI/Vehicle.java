@@ -19,6 +19,11 @@ public class Vehicle {
     private String owner;
     @DatabaseField
     private String rut;
+    // add person object field
+    @DatabaseField
+    private Person person;
+    @DatabaseField
+    private boolean wasStolen;
 
     public Vehicle() {
 
@@ -78,5 +83,22 @@ public class Vehicle {
 
     public void setRut(String rut) {
         this.rut = rut;
+    }
+
+    // add getter and setter for person object
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public boolean isWasStolen() {
+        return wasStolen;
+    }
+
+    public void setWasStolen(boolean wasStolen) {
+        this.wasStolen = wasStolen;
     }
 }
