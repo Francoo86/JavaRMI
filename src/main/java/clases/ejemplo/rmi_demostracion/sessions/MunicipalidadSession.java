@@ -1,10 +1,12 @@
 // HibernateUtilMunicipalidad.java
 package clases.ejemplo.rmi_demostracion.sessions;
 
+import clases.ejemplo.rmi_demostracion.models.Permiso;
+
 public class MunicipalidadSession extends BaseSession{
-    private static final String CONFIG_FILE = "hibernateMunicipalidad.cfg.xml";
+    private static final String DATABASE_NAME = "RMI_Municipalidad";
 
     static {
-        initialize(CONFIG_FILE);
+        initialize(DATABASE_NAME, Permiso.class);
     }
 }

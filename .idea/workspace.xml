@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7fadfc7-3bb4-41ea-8366-f85eb43b2791" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/CarabineroSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/CarabineroSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/MunicipalidadSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/MunicipalidadSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/PDISession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/PDISession.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,5 +145,9 @@
       <updated>1717597301755</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:javax.persistence:javax.persistence-api" />
   </component>
 </project>
