@@ -1,6 +1,7 @@
 // HibernateUtil.java
 package clases.ejemplo.rmi_demostracion.sessions;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -33,13 +34,18 @@ public abstract class BaseSession {
 
     private static Configuration getConfiguration(String dbName) {
         Configuration configuration = new Configuration();
+        Dotenv dotenv = Dotenv.load();
+
+        String dbHost = dotenv.get("DB_HOST");
+        String dbUser = dotenv.get("DB_USER");
+        String dbPassword = dotenv.get("DB_PASSWORD");
 
         // Set Hibernate properties programmatically
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
-        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/" + dbName);
-        configuration.setProperty("hibernate.connection.username", "root");
-        configuration.setProperty("hibernate.connection.password", "");
+        configuration.setProperty("hibernate.connection.url", String.format("jdbc:mysql://%s:3306/%s", dbHost, dbName));
+        configuration.setProperty("hibernate.connection.username", dbName);
+        configuration.setProperty("hibernate.connection.password", dbPassword);
         configuration.setProperty("hibernate.hbm2ddl.auto", "update");
         configuration.setProperty("hibernate.show_sql", "true");
         configuration.setProperty("hibernate.format_sql", "true");
