@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b35d13d-96c8-48ca-9dbe-9bb4f7c7d5bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/AplicacionRMI/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/AplicacionRMI/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AplicacionRMI/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/AplicacionRMI/Vehicle.java" afterDir="false" />
-    </list>
+    <list default="true" id="b7fadfc7-3bb4-41ea-8366-f85eb43b2791" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,54 +21,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Francoo86&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Francoo86/JavaRMI.git&quot;,
-    &quot;accountId&quot;: &quot;eb0ba0f5-8475-40eb-bb73-2108a9bb39e9&quot;
-  }
-}</component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 6
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2h44aKVsqQDkTzsiLr7GkhKSlFF" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2hSpOesyZIn52Hs5v75zDgKeYVF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.TestVehicles.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Franco/Documents/GitHub/Work/Francoo86/JavaRMI/lib&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CarabineroServer.executor": "Run",
+    "Application.Cliente_Carabinero.executor": "Run",
+    "Application.MuniServer.executor": "Run",
+    "Application.PDIServer.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Old-folders",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="TestVehicles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="AplicacionRMI.TestVehicles" />
-      <module name="JavaRMI" />
+}]]></component>
+  <component name="RunManager" selected="Application.Cliente_Carabinero">
+    <configuration name="CarabineroServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Server.CarabineroServer" />
+      <module name="RMI_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="AplicacionRMI.*" />
+          <option name="PATTERN" value="clases.ejemplo.rmi_demostracion.Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,24 +57,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Cliente_Carabinero" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Client.ConsultaDatos.Cliente_Carabinero" />
+      <module name="RMI_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clases.ejemplo.rmi_demostracion.Client.ConsultaDatos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MuniServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Server.MuniServer" />
+      <module name="RMI_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clases.ejemplo.rmi_demostracion.Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PDIServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Server.PDIServer" />
+      <module name="RMI_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clases.ejemplo.rmi_demostracion.Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="RMI_Final" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="RMI_Final" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestVehicles" />
+        <item itemvalue="Application.Cliente_Carabinero" />
+        <item itemvalue="Application.CarabineroServer" />
+        <item itemvalue="Application.MuniServer" />
+        <item itemvalue="Application.PDIServer" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1b35d13d-96c8-48ca-9dbe-9bb4f7c7d5bb" name="Changes" comment="" />
-      <created>1716840078791</created>
+      <changelist id="b7fadfc7-3bb4-41ea-8366-f85eb43b2791" name="Changes" comment="" />
+      <created>1717597301755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1716840078791</updated>
+      <updated>1717597301755</updated>
     </task>
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
