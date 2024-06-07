@@ -5,9 +5,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 public abstract class BaseSession {
@@ -44,7 +42,7 @@ public abstract class BaseSession {
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", String.format("jdbc:mysql://%s:3306/%s", dbHost, dbName));
-        configuration.setProperty("hibernate.connection.username", dbName);
+        configuration.setProperty("hibernate.connection.username", dbUser);
         configuration.setProperty("hibernate.connection.password", dbPassword);
         configuration.setProperty("hibernate.hbm2ddl.auto", "update");
         configuration.setProperty("hibernate.show_sql", "true");
