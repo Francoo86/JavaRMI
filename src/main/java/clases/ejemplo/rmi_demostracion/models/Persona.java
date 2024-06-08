@@ -15,7 +15,7 @@ public class Persona {
     private String lastName;
 
     @Column(name = "RUT", nullable = false, length = 15)
-    private String rut;
+    private int rut;
 
     @Column(name = "DV", nullable = false, length = 1)
     private char dv;
@@ -50,11 +50,11 @@ public class Persona {
         this.lastName = lastName;
     }
 
-    public String getRut() {
+    public int getRut() {
         return rut;
     }
 
-    public void setRut(String rut) {
+    public void setRut(int rut) {
         this.rut = rut;
     }
 
