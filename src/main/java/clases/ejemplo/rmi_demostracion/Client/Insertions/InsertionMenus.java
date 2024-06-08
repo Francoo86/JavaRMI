@@ -2,9 +2,9 @@ package clases.ejemplo.rmi_demostracion.Client.Insertions;
 
 import clases.ejemplo.rmi_demostracion.Shared.ChileUtility;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
-import clases.ejemplo.rmi_demostracion.models.Permiso;
-import clases.ejemplo.rmi_demostracion.models.Persona;
-import clases.ejemplo.rmi_demostracion.models.Vehiculo;
+import clases.ejemplo.rmi_demostracion.Entity.Permiso;
+import clases.ejemplo.rmi_demostracion.Entity.Persona;
+import clases.ejemplo.rmi_demostracion.Entity.Vehiculo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

@@ -1,8 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
-import clases.ejemplo.rmi_demostracion.models.Persona;
-import clases.ejemplo.rmi_demostracion.models.Permiso;
-import clases.ejemplo.rmi_demostracion.models.Vehiculo;
+import clases.ejemplo.rmi_demostracion.Entity.Persona;
+import clases.ejemplo.rmi_demostracion.Entity.Permiso;
+import clases.ejemplo.rmi_demostracion.Entity.Vehiculo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

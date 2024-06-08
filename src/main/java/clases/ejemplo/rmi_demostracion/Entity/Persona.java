@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.models;
+package clases.ejemplo.rmi_demostracion.Entity;
 
 import javax.persistence.*;
 @Entity

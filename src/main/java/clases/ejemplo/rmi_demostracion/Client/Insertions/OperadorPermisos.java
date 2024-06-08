@@ -1,7 +1,7 @@
 package clases.ejemplo.rmi_demostracion.Client.Insertions;
 
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
-import clases.ejemplo.rmi_demostracion.models.Permiso;
+import clases.ejemplo.rmi_demostracion.Entity.Permiso;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
