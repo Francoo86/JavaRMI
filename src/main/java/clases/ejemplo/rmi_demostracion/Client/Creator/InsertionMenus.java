@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.Client.Insertions;
+package clases.ejemplo.rmi_demostracion.Client.Creator;
 
 import clases.ejemplo.rmi_demostracion.Shared.ChileUtility;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
@@ -25,7 +25,7 @@ public class InsertionMenus {
         System.out.println("Ingrese el año de vencimiento:");
         permiso.setDueDate(scanner.nextLine().trim());
 
-        System.out.println("¿Está el permiso al día? (Y/N):");
+        System.out.println("¿El permiso está actualizado? (Y/N):");
 
         boolean isPermisoValido = scanner.nextLine().trim().equalsIgnoreCase("Y");
         permiso.setIsValido(isPermisoValido);
