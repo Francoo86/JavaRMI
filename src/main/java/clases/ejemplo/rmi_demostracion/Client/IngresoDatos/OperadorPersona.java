@@ -1,5 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
 
+import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Persona;
 import clases.ejemplo.rmi_demostracion.sessions.PDISession;
 import org.hibernate.Session;
@@ -33,7 +34,7 @@ public class OperadorPersona {
         scanner.close();
 
         // Guardar la persona en la base de datos
-        Session session = PDISession.getSessionFactory().openSession();
+        Session session = SingleSessionFactory.getPDIFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();

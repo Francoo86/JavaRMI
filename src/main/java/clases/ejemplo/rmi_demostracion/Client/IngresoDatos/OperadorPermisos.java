@@ -1,5 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
 
+import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Permiso;
 import clases.ejemplo.rmi_demostracion.sessions.MunicipalidadSession;
 import org.hibernate.Session;
@@ -32,7 +33,7 @@ public class OperadorPermisos {
         scanner.close();
 
         // Guardar el permiso en la base de datos
-        Session session = MunicipalidadSession.getSessionFactory().openSession();
+        Session session = SingleSessionFactory.getMuniFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();

@@ -1,5 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
+import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Permiso;
 import clases.ejemplo.rmi_demostracion.sessions.MunicipalidadSession;
 import clases.ejemplo.rmi_demostracion.sessions.SessionRMI;
@@ -18,7 +19,7 @@ public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso 
 
     public MuniServer() throws RemoteException {
         super();
-        sessionFactory = SessionRMI.getInstance().getSessionFactory("RMI_Municipalidad", Permiso.class);
+        sessionFactory = SingleSessionFactory.getMuniFactory();
         if(sessionFactory != null) {
             System.out.println("[MuniServer] La fabrica de sesiones se ha creado correctamente.");
         }
@@ -47,11 +48,11 @@ public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso 
         return valido;*/
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException, java.net.MalformedURLException {
         try {
             LocateRegistry.createRegistry(PORT);
             MuniServer obj = new MuniServer();
-            Naming.rebind("//localhost/PreguntarPermiso", obj);
+            Naming.rebind(String.format("//%s:%s/PreguntarPermiso", ServerUtils.BASE_HOST, PORT), obj);
         } catch (Exception e) {
             System.out.println("Server error: " + e.getMessage());
         }

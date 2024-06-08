@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 import java.util.function.Function;
 
 public class ServerUtils {
-
+    public static final String BASE_HOST = "127.0.0.1";
     private static <T> T executeTransaction(SessionFactory sessionFactory, Function<Session, T> action) {
         T result = null;
         Session session = sessionFactory.openSession();

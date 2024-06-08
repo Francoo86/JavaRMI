@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class SessionRMI {
     private static SessionRMI instance;
-    private static final Map<String, Map<Class<?>, SessionFactory>> sessionFactoryMap = new HashMap<>();
+    private static final Map<String, SessionFactory> sessionFactoryMap = new HashMap<>();
 
     private SessionRMI() {}
 
@@ -20,18 +20,19 @@ public class SessionRMI {
         return instance;
     }
 
-    public SessionFactory getSessionFactory(String dbName, Class<?> entityClass) {
-        return sessionFactoryMap.computeIfAbsent(dbName, key -> new HashMap<>())
-                .computeIfAbsent(entityClass, key -> buildSessionFactory(dbName, entityClass));
+    public SessionFactory getSessionFactory(String dbName, Class<?>... entityClasses) {
+        return sessionFactoryMap.computeIfAbsent(dbName, key -> buildSessionFactory(dbName, entityClasses));
     }
 
-    private SessionFactory buildSessionFactory(String dbName, Class<?> entityClass) {
+    private SessionFactory buildSessionFactory(String dbName, Class<?>... entityClasses) {
         try {
             Configuration configuration = getConfiguration(dbName);
-            configuration.addAnnotatedClass(entityClass);
-            return configuration.buildSessionFactory();
+            for (Class<?> entityClass : entityClasses) {
+                configuration.addAnnotatedClass(entityClass);
+            }
+            return configuration.configure().buildSessionFactory();
         } catch (Throwable ex) {
-            System.err.println("Initial SessionFactory creation failed for database " + dbName + ", entity " + entityClass.getName() + "." + ex);
+            System.err.println("Initial SessionFactory creation failed for database " + dbName + "." + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
@@ -44,7 +45,6 @@ public class SessionRMI {
         String dbUser = dotenv.get("DB_USER");
         String dbPassword = dotenv.get("DB_PASSWORD");
 
-        // Set Hibernate properties programmatically
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", String.format("jdbc:mysql://%s:3306/%s", dbHost, dbName));
@@ -56,9 +56,8 @@ public class SessionRMI {
         return configuration;
     }
 
-    // Optional: Add method to close the session factory when it's no longer needed
-    public void closeSessionFactory(String dbName, Class<?> entityClass) {
-        SessionFactory sessionFactory = sessionFactoryMap.get(dbName).get(entityClass);
+    public void closeSessionFactory(String dbName) {
+        SessionFactory sessionFactory = sessionFactoryMap.get(dbName);
         if (sessionFactory != null && !sessionFactory.isClosed()) {
             sessionFactory.close();
         }

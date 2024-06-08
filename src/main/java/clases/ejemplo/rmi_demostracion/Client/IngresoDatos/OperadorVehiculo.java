@@ -1,14 +1,14 @@
 package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
 
+import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Vehiculo;
-import clases.ejemplo.rmi_demostracion.sessions.CarabineroSession;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.Scanner;
 
 public class OperadorVehiculo {
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -34,7 +34,7 @@ public class OperadorVehiculo {
         scanner.close();
 
         // Guardar el vehículo en la base de datos
-        Session session = CarabineroSession.getSessionFactory().openSession();
+        Session session = SingleSessionFactory.getCarabineroFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
@@ -49,9 +49,5 @@ public class OperadorVehiculo {
         } finally {
             session.close();
         }
-
-        // Cerrar Hibernate
-        CarabineroSession.shutdown();
-
     }
 }
