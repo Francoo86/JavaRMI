@@ -1,5 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
+import clases.ejemplo.rmi_demostracion.Shared.Constants;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import org.hibernate.SessionFactory;
 
@@ -49,7 +50,7 @@ public class CarabineroServer extends UnicastRemoteObject implements IPatentChec
         try {
             Registry reg = LocateRegistry.createRegistry(PORT);
             CarabineroServer obj = new CarabineroServer();
-            reg.rebind(String.format("//%s:%s/IPatentChecker", ServerUtils.BASE_HOST, PORT), obj);
+            reg.rebind(String.format("//%s:%s/%s", Constants.SERVER_IP, Constants.CARABINEROS_PORT, Constants.REVISA_PATENTES), obj);
         } catch (Exception e) {
             System.out.println("Server error: " + e.getMessage());
         }

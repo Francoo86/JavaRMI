@@ -1,6 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
+import clases.ejemplo.rmi_demostracion.Shared.Constants;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
+import com.sun.xml.bind.v2.runtime.reflect.opt.Const;
 import org.hibernate.SessionFactory;
 
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IRUTChecker;
@@ -32,7 +34,7 @@ public class PDIServer extends UnicastRemoteObject implements IRUTChecker {
         try {
             LocateRegistry.createRegistry(PORT);
             PDIServer obj = new PDIServer();
-            String url = String.format("//%s:%s/IRUTChecker", ServerUtils.BASE_HOST, PORT);
+            String url = String.format("//%s:%s/%s", Constants.SERVER_IP, Constants.PDI_PORT, Constants.REVISA_RUT);
             System.out.println(url);
             Naming.rebind(url, obj);
             System.out.println("Server ready");

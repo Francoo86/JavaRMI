@@ -1,6 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
+import clases.ejemplo.rmi_demostracion.Shared.Constants;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
+import com.sun.xml.bind.v2.runtime.reflect.opt.Const;
 import org.hibernate.SessionFactory;
 
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPermissionChecker;
@@ -49,7 +51,7 @@ public class MuniServer extends UnicastRemoteObject implements IPermissionChecke
         try {
             LocateRegistry.createRegistry(PORT);
             MuniServer obj = new MuniServer();
-            Naming.rebind(String.format("//%s:%s/IPermissionChecker", ServerUtils.BASE_HOST, PORT), obj);
+            Naming.rebind(String.format("//%s:%s/%s", Constants.SERVER_IP, Constants.MUNICIPALIDAD_PORT, Constants.REVISA_PERMISOS), obj);
         } catch (Exception e) {
             System.out.println("Server error: " + e.getMessage());
         }
