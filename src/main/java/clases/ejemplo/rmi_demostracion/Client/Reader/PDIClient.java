@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.Client.ConsultaDatos;
+package clases.ejemplo.rmi_demostracion.Client.Reader;
 
 public class PDIClient {
 

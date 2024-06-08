@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.Client.ConsultaDatos;
+package clases.ejemplo.rmi_demostracion.Client.Reader;
 
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPatentChecker;
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPermissionChecker;
