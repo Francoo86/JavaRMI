@@ -9,16 +9,16 @@ public class Vehiculo {
     private int id;
 
     @Column(name = "Patente", nullable = false, length = 15)
-    private String patente;
+    private String patent;
 
     @Column(name = "Marca", nullable = false)
-    private String marca;
+    private String brand;
 
     @Column(name = "Modelo", nullable = false)
-    private String modelo;
+    private String model;
 
     @Column(name = "Anio", nullable = false)
-    private int anio;
+    private int year;
 
     @Column(name = "Robo")
     private boolean isRobado;
@@ -32,36 +32,36 @@ public class Vehiculo {
         this.id = id;
     }
 
-    public String getPatente() {
-        return patente;
+    public String getPatent() {
+        return patent;
     }
 
-    public void setPatente(String patente) {
-        this.patente = patente;
+    public void setPatent(String patent) {
+        this.patent = patent;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getModel() {
+        return model;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public int getAnio() {
-        return anio;
+    public int getYear() {
+        return year;
     }
 
-    public void setAnio(int anio) {
-        this.anio = anio;
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public boolean isRobado() {
