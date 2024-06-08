@@ -8,7 +8,6 @@ import org.hibernate.Transaction;
 import java.util.Scanner;
 
 public class OperadorPermisos {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -17,15 +16,15 @@ public class OperadorPermisos {
 
         // Permiso contiene los siguientes campos: Patente, Fecha_vencimiento y Estado_permiso(boolean)
         System.out.println("Ingrese la patente:");
-        permiso.setPatente(scanner.nextLine().trim());
+        permiso.setPatent(scanner.nextLine().trim());
 
         System.out.println("Ingrese el año de vencimiento:");
-        permiso.setFecha_vencimiento(scanner.nextLine().trim());
+        permiso.setDueDate(scanner.nextLine().trim());
 
         System.out.println("¿Está el permiso al día? (Y/N):");
 
         boolean isPermisoValido = scanner.nextLine().trim().equalsIgnoreCase("Y");
-        permiso.setValidez(isPermisoValido);
+        permiso.setIsValido(isPermisoValido);
 
         // Cerrar scanner
         scanner.close();
@@ -46,9 +45,5 @@ public class OperadorPermisos {
         } finally {
             session.close();
         }
-
-        // Cerrar Hibernate;
-
     }
-    
 }

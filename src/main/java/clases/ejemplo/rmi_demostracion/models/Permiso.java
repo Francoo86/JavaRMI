@@ -9,13 +9,13 @@ public class Permiso {
     private int id;
     
     @Column(name = "Patente", nullable = false, length = 15)
-    private String patente;
+    private String patent;
 
-    @Column(name = "Fecha_vencimiento", nullable = false, length = 15)
-    private String fecha_vencimiento;
+    @Column(name = "Fecha_Limite", nullable = false, length = 15)
+    private String dueDate;
 
-    @Column(name = "Estado_permiso")
-    private boolean estado_permiso;
+    @Column(name = "Permiso_Valido")
+    private boolean validPermiso;
 
     // Getters y Setters
     public int getId() {
@@ -26,28 +26,28 @@ public class Permiso {
         this.id = id;
     }
 
-    public String getPatente() {
-        return patente;
+    public String getPatent() {
+        return patent;
     }
 
-    public void setPatente(String patente) {
-        this.patente = patente;
+    public void setPatent(String patent) {
+        this.patent = patent;
     }
 
-    public String getFecha_vencimiento() {
-        return fecha_vencimiento;
+    public String getDueDate() {
+        return dueDate;
     }
 
-    public void setFecha_vencimiento(String fecha_vencimiento) {
-        this.fecha_vencimiento = fecha_vencimiento;
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 
     public boolean isValido() {
-        return estado_permiso;
+        return validPermiso;
     }
 
-    public void setValidez(boolean estado_permiso) {
-        this.estado_permiso = estado_permiso;
+    public void setIsValido(boolean isValido) {
+        this.validPermiso = isValido;
     }
 
 }
