@@ -14,6 +14,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso {
     private static SessionFactory sessionFactory;
+    private static final int PORT = 1101;
 
     public MuniServer() throws RemoteException {
         super();
@@ -48,7 +49,7 @@ public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso 
 
     public static void main(String[] args) {
         try {
-            LocateRegistry.createRegistry(1101);
+            LocateRegistry.createRegistry(PORT);
             MuniServer obj = new MuniServer();
             Naming.rebind("//localhost/PreguntarPermiso", obj);
         } catch (Exception e) {
