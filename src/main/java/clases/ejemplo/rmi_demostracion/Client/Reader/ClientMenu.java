@@ -1,5 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Client.Reader;
 
+import clases.ejemplo.rmi_demostracion.Shared.Constants;
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPatentChecker;
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPermissionChecker;
 import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IRUTChecker;
@@ -47,8 +48,8 @@ public class ClientMenu {
     }
 
     public void municipalMenu() throws RemoteException, NotBoundException {
-        Registry registry = getRegistry();
-        IPermissionChecker stub = (IPermissionChecker) registry.lookup("IPermissionChecker");
+        Registry registry = LocateRegistry.getRegistry(Constants.SERVER_IP, Constants.MUNICIPALIDAD_PORT);
+        IPermissionChecker stub = (IPermissionChecker) registry.lookup(Constants.REVISA_PERMISOS);
 
         String patente = getInput("Ingrese la patente que desea consultar:");
         boolean valido = stub.consultarValidez(patente);
@@ -58,8 +59,8 @@ public class ClientMenu {
     }
 
     public void carabineroMenu() throws RemoteException, NotBoundException {
-        Registry registry = getRegistry();
-        IPatentChecker stub = (IPatentChecker) registry.lookup("IPatentChecker");
+        Registry registry = LocateRegistry.getRegistry(Constants.SERVER_IP, Constants.CARABINEROS_PORT);
+        IPatentChecker stub = (IPatentChecker) registry.lookup(Constants.REVISA_PATENTES);
 
         String patente = getInput("Ingrese la patente que desea consultar:");
         boolean robo = stub.consultarRobo(patente);
@@ -69,8 +70,8 @@ public class ClientMenu {
     }
 
     public void pdiMenu() throws RemoteException, NotBoundException {
-        Registry registry = getRegistry();
-        IRUTChecker stub = (IRUTChecker) registry.lookup("IRUTChecker");
+        Registry registry = LocateRegistry.getRegistry(Constants.SERVER_IP, Constants.PDI_PORT);
+        IRUTChecker stub = (IRUTChecker) registry.lookup(Constants.REVISA_RUT);
 
         String rut = getInput("Ingrese el RUT que desea consultar:");
         boolean arraigo = stub.consultarArraigo(rut);
