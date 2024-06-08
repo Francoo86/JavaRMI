@@ -28,7 +28,7 @@ public class OperadorVehiculo {
         vehiculo.setAnio(scanner.nextInt());
 
         System.out.println("¿Tiene encargo por robo? (true/false):");
-        vehiculo.setRobo(scanner.nextBoolean());
+        vehiculo.setRobado(scanner.nextBoolean());
 
         // Cerrar scanner
         scanner.close();

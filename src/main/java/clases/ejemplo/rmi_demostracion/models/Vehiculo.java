@@ -21,7 +21,7 @@ public class Vehiculo {
     private int anio;
 
     @Column(name = "Robo")
-    private boolean robo;
+    private boolean isRobado;
 
     // Getters y Setters
     public int getId() {
@@ -64,11 +64,11 @@ public class Vehiculo {
         this.anio = anio;
     }
 
-    public boolean isRobo() {
-        return robo;
+    public boolean isRobado() {
+        return isRobado;
     }
 
-    public void setRobo(boolean robo) {
-        this.robo = robo;
+    public void setRobado(boolean robado) {
+        this.isRobado = robado;
     }
 }

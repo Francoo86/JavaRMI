@@ -24,10 +24,10 @@ public class OperadorPersona {
         persona.setRut(scanner.nextLine());
 
         System.out.println("Ingrese la nacionalidad:");
-        persona.setNacionalidad(scanner.nextLine());
+        persona.setNationality(scanner.nextLine());
 
         System.out.println("¿Tiene arraigo nacional? (true/false):");
-        persona.setArraigo(scanner.nextBoolean());
+        persona.setHasArraigo(scanner.nextBoolean());
 
         // Cerrar scanner
         scanner.close();

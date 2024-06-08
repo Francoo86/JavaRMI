@@ -34,7 +34,7 @@ public class ServerUtils {
             Persona persona = (Persona) session.createQuery("FROM Persona WHERE rut = :rut")
                     .setParameter("rut", rut)
                     .uniqueResult();
-            return persona != null && persona.isArraigo();
+            return persona != null && persona.hasArraigo();
         });
     }
 
@@ -43,7 +43,7 @@ public class ServerUtils {
             Vehiculo vehiculo = (Vehiculo) session.createQuery("FROM Vehiculo WHERE patente = :patente")
                     .setParameter("patente", patente)
                     .uniqueResult();
-            return vehiculo != null && vehiculo.isRobo();
+            return vehiculo != null && vehiculo.isRobado();
         });
     }
 

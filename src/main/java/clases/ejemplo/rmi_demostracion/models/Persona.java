@@ -17,13 +17,17 @@ public class Persona {
     @Column(name = "RUT", nullable = false, length = 15)
     private String rut;
 
+    @Column(name = "DV", nullable = false, length = 1)
+    private char dv;
+
     @Column(name = "Nacionalidad", length = 100)
-    private String nacionalidad;
+    private String nationality;
 
-    @Column(name = "Arraigo")
-    private boolean arraigo;
+    @Column(name = "Is_Arraigo")
+    private boolean hasArraigo;
 
-    // Getters y Setters
+
+    
     public int getId() {
         return id;
     }
@@ -56,19 +60,28 @@ public class Persona {
         this.rut = rut;
     }
 
-    public String getNacionalidad() {
-        return nacionalidad;
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
-    public boolean isArraigo() {
-        return arraigo;
+    public boolean hasArraigo() {
+
+        return hasArraigo;
     }
 
-    public void setArraigo(boolean arraigo) {
-        this.arraigo = arraigo;
+    public void setHasArraigo(boolean hasArraigo) {
+        this.hasArraigo = hasArraigo;
+    }
+
+    public char getDv() {
+        return dv;
+    }
+
+    public void setDv(char dv) {
+        this.dv = dv;
     }
 }

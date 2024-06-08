@@ -35,7 +35,7 @@ public class CarabineroServer extends UnicastRemoteObject implements PreguntarPa
                     .setParameter("patente", patente)
                     .uniqueResult();
             if (vehiculo != null) {
-                robo = vehiculo.isRobo();
+                robo = vehiculo.isRobado();
             }
             session.getTransaction().commit();
         } catch (Exception e) {
