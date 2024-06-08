@@ -3,10 +3,9 @@ package clases.ejemplo.rmi_demostracion.Server;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import org.hibernate.SessionFactory;
 
-import clases.ejemplo.rmi_demostracion.Interface.IPatentChecker;
+import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPatentChecker;
 
 import java.rmi.registry.LocateRegistry;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;

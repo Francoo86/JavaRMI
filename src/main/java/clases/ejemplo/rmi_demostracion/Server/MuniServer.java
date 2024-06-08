@@ -3,7 +3,7 @@ package clases.ejemplo.rmi_demostracion.Server;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import org.hibernate.SessionFactory;
 
-import clases.ejemplo.rmi_demostracion.Interface.IPermissionChecker;
+import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPermissionChecker;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.Naming;

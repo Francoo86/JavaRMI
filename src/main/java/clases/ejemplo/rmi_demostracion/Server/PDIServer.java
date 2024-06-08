@@ -3,7 +3,7 @@ package clases.ejemplo.rmi_demostracion.Server;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import org.hibernate.SessionFactory;
 
-import clases.ejemplo.rmi_demostracion.Interface.IRUTChecker;
+import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IRUTChecker;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.Naming;

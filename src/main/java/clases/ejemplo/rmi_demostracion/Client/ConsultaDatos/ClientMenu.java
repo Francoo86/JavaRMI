@@ -1,8 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Client.ConsultaDatos;
 
-import clases.ejemplo.rmi_demostracion.Interface.IPatentChecker;
-import clases.ejemplo.rmi_demostracion.Interface.IPermissionChecker;
-import clases.ejemplo.rmi_demostracion.Interface.IRUTChecker;
+import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPatentChecker;
+import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IPermissionChecker;
+import clases.ejemplo.rmi_demostracion.Shared.Interfaces.IRUTChecker;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
