@@ -9,12 +9,12 @@ import org.hibernate.Transaction;
 import java.util.function.Function;
 
 public class ServerUtils {
-    public static final String BASE_HOST = "127.0.0.1";
     private static <T> T executeTransaction(SessionFactory sessionFactory, Function<Session, T> action) {
         T result = null;
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
         try {
+            System.out.println("DOING TRANSACTION");
             transaction = session.beginTransaction();
             result = action.apply(session);
             transaction.commit();
@@ -31,8 +31,9 @@ public class ServerUtils {
 
     public static boolean verifyArraigo(SessionFactory sessionFactory, String rut) {
         return executeTransaction(sessionFactory, session -> {
+            System.out.println("Verifying arraigo for " + rut);
             Persona persona = (Persona) session.createQuery("FROM Persona WHERE rut = :rut")
-                    .setParameter("rut", rut)
+                    .setParameter("rut", Integer.parseInt(rut))
                     .uniqueResult();
             return persona != null && persona.hasArraigo();
         });

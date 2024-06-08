@@ -28,10 +28,6 @@ public class ClientMenu {
         this.shouldClose = shouldClose;
     }
 
-    private Registry getRegistry() throws RemoteException {
-        return LocateRegistry.getRegistry(null);
-    }
-
     private void closeScannerIfNeeded() {
         if (shouldClose) {
             sc.close();
@@ -44,27 +40,31 @@ public class ClientMenu {
     }
 
     private void displayResult(String message, boolean result) {
-        System.out.println(message + result);
+        String spanishRes = result ? "Sí" : "No";
+        System.out.println(message + spanishRes);
     }
 
     public void municipalMenu() throws RemoteException, NotBoundException {
         Registry registry = LocateRegistry.getRegistry(Constants.SERVER_IP, Constants.MUNICIPALIDAD_PORT);
         IPermissionChecker stub = (IPermissionChecker) registry.lookup(Constants.REVISA_PERMISOS);
 
-        String patente = getInput("Ingrese la patente que desea consultar:");
+        String patente = getInput("Ingrese la patente que desea revisar:");
         boolean valido = stub.consultarValidez(patente);
-        displayResult("El permiso con patente " + patente + " tiene como estado de validación: ", valido);
+        displayResult("El permiso con patente " + patente + " Es válido: ", valido);
 
         closeScannerIfNeeded();
     }
 
     public void carabineroMenu() throws RemoteException, NotBoundException {
         Registry registry = LocateRegistry.getRegistry(Constants.SERVER_IP, Constants.CARABINEROS_PORT);
+
+        System.out.println("Registry: " + registry.toString());
+        System.out.println("Constants.REVISA_PATENTES: " + Constants.REVISA_PATENTES);
         IPatentChecker stub = (IPatentChecker) registry.lookup(Constants.REVISA_PATENTES);
 
-        String patente = getInput("Ingrese la patente que desea consultar:");
+        String patente = getInput("Ingrese la patente que desea revisar:");
         boolean robo = stub.consultarRobo(patente);
-        displayResult("El vehículo con patente " + patente + " tiene encargo por robo: ", robo);
+        displayResult("El vehículo con la patente " + patente + " Fue o es robado: ", robo);
 
         closeScannerIfNeeded();
     }
@@ -73,9 +73,9 @@ public class ClientMenu {
         Registry registry = LocateRegistry.getRegistry(Constants.SERVER_IP, Constants.PDI_PORT);
         IRUTChecker stub = (IRUTChecker) registry.lookup(Constants.REVISA_RUT);
 
-        String rut = getInput("Ingrese el RUT que desea consultar:");
+        String rut = getInput("Ingrese el RUT que desea revisar:");
         boolean arraigo = stub.consultarArraigo(rut);
-        displayResult("La persona con RUT " + rut + " tiene arraigo: ", arraigo);
+        displayResult("La persona de RUT " + rut + " Posee arraigo: ", arraigo);
 
         closeScannerIfNeeded();
     }
