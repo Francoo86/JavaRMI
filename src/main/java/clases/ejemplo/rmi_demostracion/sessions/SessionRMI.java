@@ -29,8 +29,10 @@ public class SessionRMI {
             Configuration configuration = getConfiguration(dbName);
             for (Class<?> entityClass : entityClasses) {
                 configuration.addAnnotatedClass(entityClass);
+                System.out.println("Added entity class " + entityClass.getName());
             }
-            return configuration.configure().buildSessionFactory();
+
+            return configuration.buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed for database " + dbName + "." + ex);
             throw new ExceptionInInitializerError(ex);

@@ -11,10 +11,10 @@ public class Vehiculo {
     @Column(name = "Patente", nullable = false, length = 15)
     private String patente;
 
-    @Column(name = "Marca", nullable = false, length = 255)
+    @Column(name = "Marca", nullable = false)
     private String marca;
 
-    @Column(name = "Modelo", nullable = false, length = 255)
+    @Column(name = "Modelo", nullable = false)
     private String modelo;
 
     @Column(name = "Anio", nullable = false)

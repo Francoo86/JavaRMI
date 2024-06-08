@@ -2,7 +2,6 @@ package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
 
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Permiso;
-import clases.ejemplo.rmi_demostracion.sessions.MunicipalidadSession;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -49,8 +48,7 @@ public class OperadorPermisos {
             session.close();
         }
 
-        // Cerrar Hibernate
-        MunicipalidadSession.shutdown();
+        // Cerrar Hibernate;
 
     }
     
