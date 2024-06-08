@@ -3,7 +3,7 @@ package clases.ejemplo.rmi_demostracion.Server;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import org.hibernate.SessionFactory;
 
-import clases.ejemplo.rmi_demostracion.Interface.PreguntarPatente;
+import clases.ejemplo.rmi_demostracion.Interface.IPatentChecker;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.Naming;
@@ -11,7 +11,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-public class CarabineroServer extends UnicastRemoteObject implements PreguntarPatente {
+public class CarabineroServer extends UnicastRemoteObject implements IPatentChecker {
     private static SessionFactory sessionFactory;
     private static final int PORT = 1100;
 
@@ -50,7 +50,7 @@ public class CarabineroServer extends UnicastRemoteObject implements PreguntarPa
         try {
             Registry reg = LocateRegistry.createRegistry(PORT);
             CarabineroServer obj = new CarabineroServer();
-            reg.rebind(String.format("//%s:%s/PreguntarPatente", ServerUtils.BASE_HOST, PORT), obj);
+            reg.rebind(String.format("//%s:%s/IPatentChecker", ServerUtils.BASE_HOST, PORT), obj);
         } catch (Exception e) {
             System.out.println("Server error: " + e.getMessage());
         }

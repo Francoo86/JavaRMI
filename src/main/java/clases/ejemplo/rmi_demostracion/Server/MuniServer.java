@@ -3,14 +3,14 @@ package clases.ejemplo.rmi_demostracion.Server;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import org.hibernate.SessionFactory;
 
-import clases.ejemplo.rmi_demostracion.Interface.PreguntarPermiso;
+import clases.ejemplo.rmi_demostracion.Interface.IPermissionChecker;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso {
+public class MuniServer extends UnicastRemoteObject implements IPermissionChecker {
     private static SessionFactory sessionFactory;
     private static final int PORT = 1101;
 
@@ -49,7 +49,7 @@ public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso 
         try {
             LocateRegistry.createRegistry(PORT);
             MuniServer obj = new MuniServer();
-            Naming.rebind(String.format("//%s:%s/PreguntarPermiso", ServerUtils.BASE_HOST, PORT), obj);
+            Naming.rebind(String.format("//%s:%s/IPermissionChecker", ServerUtils.BASE_HOST, PORT), obj);
         } catch (Exception e) {
             System.out.println("Server error: " + e.getMessage());
         }

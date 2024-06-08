@@ -1,8 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Client.ConsultaDatos;
 
-import clases.ejemplo.rmi_demostracion.Interface.PreguntarPatente;
-import clases.ejemplo.rmi_demostracion.Interface.PreguntarPermiso;
-import clases.ejemplo.rmi_demostracion.Interface.PreguntarRUT;
+import clases.ejemplo.rmi_demostracion.Interface.IPatentChecker;
+import clases.ejemplo.rmi_demostracion.Interface.IPermissionChecker;
+import clases.ejemplo.rmi_demostracion.Interface.IRUTChecker;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -48,7 +48,7 @@ public class ClientMenu {
 
     public void municipalMenu() throws RemoteException, NotBoundException {
         Registry registry = getRegistry();
-        PreguntarPermiso stub = (PreguntarPermiso) registry.lookup("PreguntarPermiso");
+        IPermissionChecker stub = (IPermissionChecker) registry.lookup("IPermissionChecker");
 
         String patente = getInput("Ingrese la patente que desea consultar:");
         boolean valido = stub.consultarValidez(patente);
@@ -59,7 +59,7 @@ public class ClientMenu {
 
     public void carabineroMenu() throws RemoteException, NotBoundException {
         Registry registry = getRegistry();
-        PreguntarPatente stub = (PreguntarPatente) registry.lookup("PreguntarPatente");
+        IPatentChecker stub = (IPatentChecker) registry.lookup("IPatentChecker");
 
         String patente = getInput("Ingrese la patente que desea consultar:");
         boolean robo = stub.consultarRobo(patente);
@@ -70,7 +70,7 @@ public class ClientMenu {
 
     public void pdiMenu() throws RemoteException, NotBoundException {
         Registry registry = getRegistry();
-        PreguntarRUT stub = (PreguntarRUT) registry.lookup("PreguntarRUT");
+        IRUTChecker stub = (IRUTChecker) registry.lookup("IRUTChecker");
 
         String rut = getInput("Ingrese el RUT que desea consultar:");
         boolean arraigo = stub.consultarArraigo(rut);
