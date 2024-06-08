@@ -15,11 +15,9 @@ public class Cliente_Municipal {
             try {
                 Registry registry = LocateRegistry.getRegistry(null);
                 PreguntarPermiso stub = (PreguntarPermiso) registry.lookup("PreguntarPermiso");
-    
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Ingrese la patente que desea consultar:");
                 String patente = scanner.nextLine();
-    
                 boolean valido = stub.consultarValidez(patente);
                 System.out.println("El permiso con patente " + patente + " tiene como estado de validación: " + valido);
     
