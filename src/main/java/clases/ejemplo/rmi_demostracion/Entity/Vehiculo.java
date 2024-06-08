@@ -8,7 +8,7 @@ public class Vehiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "Patente", nullable = false, length = 15)
+    @Column(name = "Patente", nullable = false, length = 6, unique = true)
     private String patent;
 
     @Column(name = "Marca", nullable = false)

@@ -11,6 +11,8 @@ import org.hibernate.Transaction;
 import java.util.Scanner;
 
 public class InsertionMenus {
+    private static int PATENTE_LENGTH = 6;
+
     public static void insertPermisos() {
         System.out.println("Insertando permisos...");
         Scanner scanner = new Scanner(System.in);
@@ -115,6 +117,13 @@ public class InsertionMenus {
         Vehiculo vehiculo = new Vehiculo();
 
         System.out.println("Ingrese la patente:");
+        String patente = scanner.nextLine().trim();
+
+        if(patente.length() != PATENTE_LENGTH) {
+            System.out.println("La patente " + patente + " no es válida ya que no posee 6 digitos.");
+            return;
+        }
+
         vehiculo.setPatent(scanner.nextLine());
 
         System.out.println("Ingrese la marca:");
