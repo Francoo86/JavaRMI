@@ -9,10 +9,10 @@ public class Persona {
     private int id;
 
     @Column(name = "Nombre", nullable = false, length = 255)
-    private String nombre;
+    private String name;
 
     @Column(name = "Apellido", nullable = false, length = 255)
-    private String apellido;
+    private String lastName;
 
     @Column(name = "RUT", nullable = false, length = 15)
     private String rut;
@@ -26,8 +26,6 @@ public class Persona {
     @Column(name = "Is_Arraigo")
     private boolean hasArraigo;
 
-
-    
     public int getId() {
         return id;
     }
@@ -36,20 +34,20 @@ public class Persona {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getRut() {

@@ -15,10 +15,10 @@ public class OperadorPersona {
         Persona persona = new Persona();
 
         System.out.println("Ingrese el nombre:");
-        persona.setNombre(scanner.nextLine());
+        persona.setName(scanner.nextLine());
 
         System.out.println("Ingrese el apellido:");
-        persona.setApellido(scanner.nextLine());
+        persona.setLastName(scanner.nextLine());
 
         System.out.println("Ingrese el RUT:");
         persona.setRut(scanner.nextLine());
