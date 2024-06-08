@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.sessions;
+package clases.ejemplo.rmi_demostracion.Shared;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

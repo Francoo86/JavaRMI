@@ -15,7 +15,12 @@ public class ClientMenu {
     private boolean shouldClose = false;
 
     public ClientMenu() {
-        sc = new Scanner(System.in);
+        this.sc = new Scanner(System.in);
+    }
+
+    //to make reusable scanners.
+    public ClientMenu(Scanner sc) {
+        this.sc = sc;
     }
 
     public void setShouldClose(boolean shouldClose) {

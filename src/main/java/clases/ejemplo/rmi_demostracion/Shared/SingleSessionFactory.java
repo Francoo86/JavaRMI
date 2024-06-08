@@ -3,7 +3,6 @@ package clases.ejemplo.rmi_demostracion.Shared;
 import clases.ejemplo.rmi_demostracion.models.Permiso;
 import clases.ejemplo.rmi_demostracion.models.Persona;
 import clases.ejemplo.rmi_demostracion.models.Vehiculo;
-import clases.ejemplo.rmi_demostracion.sessions.SessionRMI;
 import org.hibernate.SessionFactory;
 
 public class SingleSessionFactory {
