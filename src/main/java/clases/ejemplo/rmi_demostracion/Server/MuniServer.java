@@ -1,6 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
+import clases.ejemplo.rmi_demostracion.models.Permiso;
 import clases.ejemplo.rmi_demostracion.sessions.MunicipalidadSession;
+import clases.ejemplo.rmi_demostracion.sessions.SessionRMI;
 import org.hibernate.SessionFactory;
 
 import clases.ejemplo.rmi_demostracion.Interface.PreguntarPermiso;
@@ -15,7 +17,10 @@ public class MuniServer extends UnicastRemoteObject implements PreguntarPermiso 
 
     public MuniServer() throws RemoteException {
         super();
-        sessionFactory = MunicipalidadSession.getSessionFactory();
+        sessionFactory = SessionRMI.getInstance().getSessionFactory("RMI_Municipalidad", Permiso.class);
+        if(sessionFactory != null) {
+            System.out.println("[MuniServer] La fabrica de sesiones se ha creado correctamente.");
+        }
     }
 
     @Override

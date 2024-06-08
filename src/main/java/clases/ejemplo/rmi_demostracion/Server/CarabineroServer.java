@@ -1,6 +1,8 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
+import clases.ejemplo.rmi_demostracion.models.Vehiculo;
 import clases.ejemplo.rmi_demostracion.sessions.CarabineroSession;
+import clases.ejemplo.rmi_demostracion.sessions.SessionRMI;
 import org.hibernate.SessionFactory;
 
 import clases.ejemplo.rmi_demostracion.Interface.PreguntarPatente;
@@ -11,12 +13,15 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class CarabineroServer extends UnicastRemoteObject implements PreguntarPatente {
-
     private static SessionFactory sessionFactory;
+    private static final int PORT = 1100;
 
     public CarabineroServer() throws RemoteException {
         super();
-        sessionFactory = CarabineroSession.getSessionFactory();
+        sessionFactory = SessionRMI.getInstance().getSessionFactory("RMI_Carabineros", Vehiculo.class);
+        if(sessionFactory != null) {
+            System.out.println("[CarabineroServer] La fabrica de sesiones se ha creado correctamente.");
+        }
     }
 
     @Override
@@ -44,7 +49,7 @@ public class CarabineroServer extends UnicastRemoteObject implements PreguntarPa
 
     public static void main(String[] args) {
         try {
-            LocateRegistry.createRegistry(1100);
+            LocateRegistry.createRegistry(PORT);
             CarabineroServer obj = new CarabineroServer();
             Naming.rebind("//localhost/PreguntarPatente", obj);
         } catch (Exception e) {
