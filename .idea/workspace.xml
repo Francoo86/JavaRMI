@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7fadfc7-3bb4-41ea-8366-f85eb43b2791" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/CarabineroSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/CarabineroSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/MunicipalidadSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/MunicipalidadSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/SessionRMI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/Server/CarabineroServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/Server/CarabineroServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/Server/MuniServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/Server/MuniServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/Server/PDIServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/Server/PDIServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/BaseSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/BaseSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/PDISession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/ejemplo/rmi_demostracion/sessions/PDISession.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,14 +57,16 @@
     "Application.CarabineroServer.executor": "Run",
     "Application.Cliente_Carabinero.executor": "Run",
     "Application.MuniServer.executor": "Run",
+    "Application.OperadorVehiculo.executor": "Run",
     "Application.PDIServer.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Cliente_Carabinero">
+  <component name="RunManager" selected="Application.CarabineroServer">
     <configuration name="CarabineroServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Server.CarabineroServer" />
       <module name="RMI_test" />
@@ -100,6 +106,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OperadorVehiculo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Client.IngresoDatos.OperadorVehiculo" />
+      <module name="RMI_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clases.ejemplo.rmi_demostracion.Client.IngresoDatos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PDIServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="clases.ejemplo.rmi_demostracion.Server.PDIServer" />
       <module name="RMI_test" />
@@ -128,10 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Cliente_Carabinero" />
         <item itemvalue="Application.CarabineroServer" />
-        <item itemvalue="Application.MuniServer" />
         <item itemvalue="Application.PDIServer" />
+        <item itemvalue="Application.MuniServer" />
+        <item itemvalue="Application.OperadorVehiculo" />
+        <item itemvalue="Application.Cliente_Carabinero" />
       </list>
     </recent_temporary>
   </component>
