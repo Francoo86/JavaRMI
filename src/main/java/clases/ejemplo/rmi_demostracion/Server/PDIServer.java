@@ -1,9 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
-import clases.ejemplo.rmi_demostracion.models.Persona;
-import clases.ejemplo.rmi_demostracion.sessions.PDISession;
-import clases.ejemplo.rmi_demostracion.sessions.SessionRMI;
 import org.hibernate.SessionFactory;
 
 import clases.ejemplo.rmi_demostracion.Interface.PreguntarRUT;

@@ -1,9 +1,6 @@
 package clases.ejemplo.rmi_demostracion.Server;
 
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
-import clases.ejemplo.rmi_demostracion.models.Vehiculo;
-import clases.ejemplo.rmi_demostracion.sessions.CarabineroSession;
-import clases.ejemplo.rmi_demostracion.sessions.SessionRMI;
 import org.hibernate.SessionFactory;
 
 import clases.ejemplo.rmi_demostracion.Interface.PreguntarPatente;
