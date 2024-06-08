@@ -11,7 +11,7 @@ public class PDIClient {
             pdiMenu.pdiMenu();
 
         } catch (Exception e) {
-            System.err.println("Excepción del cliente: " + e.toString());
+            System.err.println("Exception: " + e.toString());
             e.printStackTrace();
         }
     }

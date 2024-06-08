@@ -42,7 +42,7 @@ public class TODOClient {
             scanner.close();
 
         } catch (Exception e) {
-            System.err.println("Excepción del cliente: " + e.toString());
+            System.err.println("Exception: " + e.getMessage());
             e.printStackTrace();
         }
     }
