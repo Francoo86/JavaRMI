@@ -1,5 +1,6 @@
-package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
+package clases.ejemplo.rmi_demostracion.Client.Insertions;
 
+import clases.ejemplo.rmi_demostracion.Shared.ChileUtility;
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Persona;
 import org.hibernate.Session;
@@ -21,13 +22,28 @@ public class OperadorPersona {
         persona.setLastName(scanner.nextLine());
 
         System.out.println("Ingrese el RUT:");
-        persona.setRut(scanner.nextLine());
+
+        try{
+            int rut = Integer.parseInt(scanner.nextLine());
+            //calcula el digito verificador
+            String dv = ChileUtility.calculateVerifierDigit(rut);
+            // convert dv to char
+            char dvChar = dv.charAt(0);
+
+            persona.setRut(Integer.parseInt(scanner.nextLine().trim()));
+            persona.setDv(dvChar);
+        } catch (NumberFormatException e) {
+            System.out.println("El RUT debe ser un número.");
+            return;
+        }
 
         System.out.println("Ingrese la nacionalidad:");
-        persona.setNationality(scanner.nextLine());
+        persona.setNationality(scanner.nextLine().trim());
 
-        System.out.println("¿Tiene arraigo nacional? (true/false):");
-        persona.setHasArraigo(scanner.nextBoolean());
+        System.out.println("¿Tiene arraigo nacional? (Y/N):");
+        boolean hasArraigo = scanner.nextLine().trim().equalsIgnoreCase("Y");
+
+        persona.setHasArraigo(hasArraigo);
 
         // Cerrar scanner
         scanner.close();

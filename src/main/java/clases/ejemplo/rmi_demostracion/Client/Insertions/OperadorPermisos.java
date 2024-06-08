@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
+package clases.ejemplo.rmi_demostracion.Client.Insertions;
 
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Permiso;
@@ -17,16 +17,15 @@ public class OperadorPermisos {
 
         // Permiso contiene los siguientes campos: Patente, Fecha_vencimiento y Estado_permiso(boolean)
         System.out.println("Ingrese la patente:");
-        permiso.setPatente(scanner.nextLine());
+        permiso.setPatente(scanner.nextLine().trim());
 
-        System.out.println("Ingrese la fecha de vencimiento:");
-        permiso.setFecha_vencimiento(scanner.nextLine());
+        System.out.println("Ingrese el año de vencimiento:");
+        permiso.setFecha_vencimiento(scanner.nextLine().trim());
 
-        System.out.println("¿Está el permiso al día? (true/false):");
-        permiso.setValidez(scanner.nextBoolean());
+        System.out.println("¿Está el permiso al día? (Y/N):");
 
-        // Cerrar scanner
-        scanner.close();
+        boolean isPermisoValido = scanner.nextLine().trim().equalsIgnoreCase("Y");
+        permiso.setValidez(isPermisoValido);
 
         // Cerrar scanner
         scanner.close();

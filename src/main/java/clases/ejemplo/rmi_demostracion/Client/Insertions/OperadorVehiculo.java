@@ -1,4 +1,4 @@
-package clases.ejemplo.rmi_demostracion.Client.IngresoDatos;
+package clases.ejemplo.rmi_demostracion.Client.Insertions;
 
 import clases.ejemplo.rmi_demostracion.Shared.SingleSessionFactory;
 import clases.ejemplo.rmi_demostracion.models.Vehiculo;
@@ -16,19 +16,21 @@ public class OperadorVehiculo {
         Vehiculo vehiculo = new Vehiculo();
 
         System.out.println("Ingrese la patente:");
-        vehiculo.setPatente(scanner.nextLine());
+        vehiculo.setPatent(scanner.nextLine());
 
         System.out.println("Ingrese la marca:");
-        vehiculo.setMarca(scanner.nextLine());
+        vehiculo.setBrand(scanner.nextLine());
 
         System.out.println("Ingrese el modelo:");
-        vehiculo.setModelo(scanner.nextLine());
+        vehiculo.setModel(scanner.nextLine());
 
         System.out.println("Ingrese el año:");
-        vehiculo.setAnio(scanner.nextInt());
+        vehiculo.setYear(scanner.nextInt());
 
-        System.out.println("¿Tiene encargo por robo? (true/false):");
-        vehiculo.setRobado(scanner.nextBoolean());
+        System.out.println("¿Tiene encargo por robo? (Y/N):");
+        boolean isRobado = scanner.nextLine().trim().equalsIgnoreCase("Y");
+
+        vehiculo.setRobado(isRobado);
 
         // Cerrar scanner
         scanner.close();
